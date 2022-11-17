@@ -694,7 +694,7 @@ impl<B> Transfer<B> {
     }
 
     /// Attempts to return the buffer if the transfer is done.
-    pub fn try_wait(mut self) -> Option<(B, I2S)> {
+    pub fn try_wait(&mut self) -> Option<(B, I2S)> {
         if self.is_done() {
             let inner = self
                 .inner
